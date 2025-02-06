@@ -8,6 +8,7 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: WmSalesforceProvider
+  version: 10.7.0.0.53
 services:
 - serviceName: project.mjan06feb.integrations:SFBasicTest
   packages:
