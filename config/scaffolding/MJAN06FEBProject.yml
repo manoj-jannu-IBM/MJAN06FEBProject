@@ -10,10 +10,11 @@ packages:
 - name: WmSalesforceProvider
   version: 10.7.0.0.53
 - name: WmJDBCAdapter
+  version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
-- serviceName: project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_OracleDB
+- serviceName: project.mjan06feb.integrations:AdapterTest
   packages:
   - name: MJAN06FEBProject
     version: "1.0"
@@ -23,27 +24,7 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-- serviceName: project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.connections:Feb06SFBasicAccount
-  packages:
-  - name: MJAN06FEBProject
-    version: "1.0"
-  - name: WmSalesforceProvider
-    version: 10.7.0.0.53
-  - name: WmJDBCAdapter
-    version: 10.3.0.0.34
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-- serviceName: project.mjan06feb.integrations:SFBasicTest
-  packages:
-  - name: MJAN06FEBProject
-    version: "1.0"
-  - name: WmSalesforceProvider
-    version: 10.7.0.0.53
-  - name: WmJDBCAdapter
-    version: 10.3.0.0.34
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-- serviceName: project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.operations.actions:CustomCreateAccount
+- serviceName: project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:getData
   packages:
   - name: MJAN06FEBProject
     version: "1.0"
@@ -142,7 +123,7 @@ configurationVariables:
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.trustStore
   : ""
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionEnabled
-  : "false"
+  : "true"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.useChunking
   : "false"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.preemptiveAuthEnabled
