@@ -14,7 +14,7 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
-- serviceName: project.mjan06feb.integrations:SFBasicTest
+- serviceName: project.mjan06feb.integrations:SF07
   packages:
   - name: MJAN06FEBProject
     version: "1.0"
@@ -24,7 +24,7 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-- serviceName: project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.operations.actions:CustomCreateAccount
+- serviceName: project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.operations.actions:MJANCustomAction
   packages:
   - name: MJAN06FEBProject
     version: "1.0"
@@ -35,35 +35,39 @@ services:
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
 configurationVariables:
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.followServerRedirects
+  : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cr.password
+  : "{AES}PG5Tb6QEvoGlmMKcNsze4ljvytV8PRHvfmUQtTsgqcPI8Yi+ekze7ovAUGnGE+qU"
   jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
   jdbc.jdbcTestPool.maxConns: "10"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.poolIncrementSize
-  : "1"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.poolable
+  : "true"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.socketLinger
   : "-1"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.enableCompression
-  : "false"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.protocolVersion
   : HTTP/1.1
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.blockTimeout
-  : "1000"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.poolIncrementSize
+  : "1"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.reuseAddr
   : "false"
-  jdbc.jdbcTestPool.spyenabled: "false"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.expireTimeout
   : "1000"
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.datasourceClass
-  : com.wm.dd.jdbcx.oracle.OracleDataSource
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.socketLinger
+  : "-1"
   jdbc.jdbcTestPool.snoopenabled: "false"
-  jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.portNumber
-  : "1521"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.username
-  : cspro@softwareag.com
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.followServerRedirects
-  : "true"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.useExpectCont
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.tcpNoDelay
   : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.serverRedirectMax
+  : "5"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.timeoutType
+  : fixed
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.startupBackoffSecs
+  : "10"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.databaseName
@@ -71,97 +75,179 @@ configurationVariables:
   jdbc.jdbcTestPool.expireTime: "60000"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.connectTimeout
   : "180000"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.maximumPoolSize
+  : "10"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.keepAliveInterval
   : "300000"
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.keyStore
   : ""
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.allowCircularRedirects
   : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.enableCompression
+  : "false"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.password
   : "{AES}PG5Tb6QEvoGlmMKcNsze4ljvytV8PRHvfmUQtTsgqcPI8Yi+ekze7ovAUGnGE+qU"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cr.authSchemeType
+  : none
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.readTimeout
+  : "180000"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.retryIfRequestSentOk
   : "true"
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.driverType
   : Progress® DataDirect®
-  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
-  jdbc.jdbcTestPool.poolThreshold: "0"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.readTimeout
-  : "180000"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.serverRedirectMax
   : "5"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.poolable
-  : "true"
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.password
-  : "{AES}gOk3wygfWVjWqDc4SLehnQ=="
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.dbType
-  : ORACLE
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.sessionExpiry
-  : "14"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.enableSNI
-  : "true"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.timeoutType
-  : fixed
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.readTimeout
+  : "180000"
   jdbc.jdbcTestPool.userid: root
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.minimumPoolSize
-  : "1"
-  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:CustomCreateAccount.virtualServiceName
-  : WmCloudStreams.SoapVS
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.authSchemeType
   : none
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.userAgent
-  : Cloudstreams
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.useExpectCont
+  : "false"
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.trustStore
   : ""
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionEnabled
   : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cr.username
+  : cspro@softwareag.com
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.useChunking
   : "false"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.preemptiveAuthEnabled
-  : "false"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.httpContentCharSet
-  : ISO-8859-1
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.transactionType
-  : NO_TRANSACTION
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.networkProtocol
   : tcp
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.validateAfterInactivity
   : "1000"
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.user
-  : JDBC_BVT
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.rh.requestHeaderNames
-  : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.httpContentCharSet
+  : ISO-8859-1
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionManagerSettings.poolable
   : "false"
   jdbc.jdbcTestPool.waitingThread: "0"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.startupBackoffSecs
   : "10"
   jdbc.jdbcTestPool.minConns: "0"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.sessionExpiry
+  : "14"
+  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.useChunking
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.rh.requestHeaderValues
+  : "text/xml,login"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.keepAliveInterval
+  : "300000"
+  jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.sockBuffSize
+  : "8192"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.retryIfRequestSentOk
+  : "true"
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.serverName
+  : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:CustomCreateAccount.connectionAlias
+  : project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.connections:Feb06SFBasicAccount
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.blockTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.connectionEnabled
+  : "true"
+  jdbc.jdbcTestPool.spyenabled: "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.retryCount
+  : "3"
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.datasourceClass
+  : com.wm.dd.jdbcx.oracle.OracleDataSource
+  jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.protocolVersion
+  : HTTP/1.1
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.portNumber
+  : "1521"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.username
+  : cspro@softwareag.com
+  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:MJANCustomAction.connectionAlias
+  : project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.connections:SF07FebCon
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.useExpectCont
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.followServerRedirects
+  : "true"
+  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:MJANCustomAction.virtualServiceName
+  : WmCloudStreams.SoapVS
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.connectTimeout
+  : "180000"
+  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.socketStaleCheck
+  : "true"
+  jdbc.jdbcTestPool.poolThreshold: "0"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.poolable
+  : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.allowCircularRedirects
+  : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.pr.userAgent
+  : Cloudstreams
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.sockBuffSize
+  : "8192"
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.password
+  : "{AES}gOk3wygfWVjWqDc4SLehnQ=="
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.dbType
+  : ORACLE
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.sessionExpiry
+  : "14"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.providerUrl
+  : https://login.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.enableSNI
+  : "true"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.timeoutType
+  : fixed
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.minimumPoolSize
+  : "1"
+  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:CustomCreateAccount.virtualServiceName
+  : WmCloudStreams.SoapVS
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.userAgent
+  : Cloudstreams
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.rh.requestHeaderValues
+  : "text/xml,login"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cr.preemptiveAuthEnabled
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.rh.requestHeaderNames
+  : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cr.preemptiveAuthEnabled
+  : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.pr.httpContentCharSet
+  : ISO-8859-1
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.transactionType
+  : NO_TRANSACTION
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.validateAfterInactivity
+  : "1000"
+  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.user
+  : JDBC_BVT
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.rh.requestHeaderNames
+  : "Content-Type,SOAPAction"
   ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.otherProperties
   : loginTimeout=60;driverType=thin;
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.enableSNI
+  : "true"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.maximumPoolSize
   : "10"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.providerUrl
   : https://login.salesforce.com/services/Soap/u/53.0
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.connectionEnabled
-  : "true"
-  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.socketStaleCheck
-  : "true"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.rh.requestHeaderValues
-  : "text/xml,login"
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.tcpNoDelay
   : "false"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.cn.idleTimeout
+  : "-1"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.idleTimeout
   : "-1"
   ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.retryCount
   : "3"
-  jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.cn.sockBuffSize
-  : "8192"
-  ? artConnection.MJAN06FEBProject.project.mjan06feb.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_OracleDB.connectionSettings.serverName
-  : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
-  ? iscloudstreamsconnectorservice.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..operations..actions:CustomCreateAccount.connectionAlias
-  : project.mjan06feb.WmSalesforceProvider.com_softwareag_cloudstreams_salesforce_v53.connections:Feb06SFBasicAccount
-  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:Feb06SFBasicAccount.startupRetryCount
-  : "0"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.blockTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..mjan06feb..WmSalesforceProvider..com_softwareag_cloudstreams_salesforce_v53..connections:SF07FebCon.minimumPoolSize
+  : "1"
   jdbc.jdbcTestPool.useSSL: "false"
